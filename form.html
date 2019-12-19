@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="css/style.css">
+<h1>Formularz</h1>
+<p class="lead">(wtyczka validate)</p>
+<form action="" name="formularz">
+    <div class="form-group">
+        <label for="Name">Nazwa zabytku</label>
+        <input type="name" class="form-control" id="Name" placeholder="Nazwa?" required>
+    </div>
+    <div class="form-group">
+        <label for="Select">Stan zabytku</label>
+        <select class="form-control" id="Select" required>
+            <option>Dobry</option>
+            <option>Uszkodzony</option>
+            <option>Oczekuje</option>
+            <option>Do sprawdzenia</option>
+            <option>Zarezerwowany (np. do wystawy)</option>
+        </select>
+        <small id="podpowiedz" class="form-text text-muted">wybór "uszkodzony" spowoduje wyświetlenie dodatkowego pola</small>
+    </div>
+    <div class="form-group dzialania">
+        <label for="WSelect">Konieczne do wykonania prace</label>
+        <select multiple class="form-control" id="WSelect" required>
+            <option>Obszerna renowacja</option>
+            <option>Zabezpieczenie na dalsze użytkowanie</option>
+            <option>Wymiana części</option>
+            <option>Transport do zewnętrznego laboratorium</option>
+        </select>
+        <small id="podpowiedzSelect" class="form-text text-muted">W celu zaznaczenia kilku opcji należy przytrzymać przcisk CTRL</small>
+    </div>
+    <div class="form-group opis">
+        <label for="Textarea">Opis stanu zabytku</label>
+        <textarea class="form-control" id="Textarea" rows="3" required></textarea>
+    </div>
+    <fieldset class="form-group">
+    <legend>Radio buttons</legend>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            W tym miejscu skończyły mi się pomysły na formularz związany z projektem
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+            Ale dalej było za mało rodzajów wejść
+        </label>
+    </div>
+    <div class="form-check disabled">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+            Tu nie można
+        </label>
+    </div>
+    </fieldset>
+    <fieldset class="form-group">
+        <legend>Jak bardzo?</legend>
+        <label for="customRange1">No bo ja to dość bardzo</label>
+        <input type="range" class="custom-range" id="customRange1">
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+<script>
+    $('select.form-control').change(function () {
+       var opt = $(this).children("option:selected").val();
+       if (opt == "Uszkodzony")
+       {
+           $('.dzialania').css('display', 'block');
+       }
+       else
+       {
+           $('.dzialania').css('display', 'none');
+       }
+    });
+</script>

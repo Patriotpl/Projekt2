@@ -1,0 +1,60 @@
+.addition
+{
+    display: none;
+}
+
+tbody th
+{
+    width: 5%;
+}
+
+.container
+{
+    overflow: auto;
+}
+
+.sliderout
+{
+    display: inline-block;
+}
+
+.sliderin
+{
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.sliderin img
+{
+    display: none;
+
+}
+
+.sliderin img.active
+{
+    display: inline-block;
+}
+
+.prev, .next
+{
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    margin-top: 205px;
+}
+
+.next
+{
+    margin-left: -45px;
+}
+
+.prev
+{
+    margin-right: -45px;
+}
+
+.dzialania
+{
+    display: none;
+}

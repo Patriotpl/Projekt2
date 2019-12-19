@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="css/style.css">
+<h1>Slider DIY</h1>
+<div class="col-12 container">
+    <img src="img/al.png" class="prev" alt="prev">
+    <div class="sliderout">
+
+        <div class="sliderin">
+            <img src="img/1.jpg" class="active fst" height="500">
+            <img src="img/2.jpg" height="500">
+            <img src="img/3.jpg" height="500">
+            <img src="img/4.jpg" class='lst' height="500">
+        </div>
+        <img src="img/ar.png" class="next" alt="next">
+    </div>
+</div>
+Wszystkie zdjęcia pochodzą z kolekcji p. J. Strenkowskiego (i są tylko trochę zniekształcone)
+<script>
+    $('.next').on('click', function () {
+        var curr = $('.active');
+        var next = curr.next();
+
+        if(next.length){
+            curr.removeClass('active').css('z-index', -10);
+            next.addClass('active').css('z-index', 10);
+        }
+        else
+        {
+            curr.removeClass('active').css('z-index', -10);
+            $('.fst').addClass('active').css('z-index', 10);
+        }
+    });
+
+    $('.prev').on('click', function () {
+        var curr = $('.active');
+        var prev = curr.prev();
+
+        if(prev.length){
+            curr.removeClass('active').css('z-index', -10);
+            prev.addClass('active').css('z-index', 10);
+        }
+        else
+        {
+            curr.removeClass('active').css('z-index', -10);
+            $('.lst').addClass('active').css('z-index', 10);
+        }
+    });
+</script>
